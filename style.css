@@ -1,14 +1,16 @@
 body {
+  height: 100vh;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   display: flex;
+  background-color: rgb(200, 200, 200);
 }
 
 #app {
   display: flex;
   flex: 1;
-  height: 100vh;
+  height: 95vh;
 }
 
 .contacts-list {
@@ -79,9 +81,9 @@ body {
 }
 
 .message-input {
-  width: 85%;
+  width: 900px;
   position: absolute;
-  bottom: 25px;
+  bottom: 35px;
 }
 
 .message-input input {

@@ -8,28 +8,29 @@
 </head>
 
 <body>
-    <div id="app">
-        <div class="contacts-list">
-            <div v-for="(contact, index) in contatti" :key="index" @click="selectContact(index)"
-                :class="{ 'active': activeContactIndex === index }">
-                <img :src="'./avatars'">
-                <span>{{ contact.name }}</span>
-            </div>
-        </div>
-        <div class=" chat">
-            <div v-if="activeContactIndex !== null" class="messages">
-                <div v-for="message in contatti[activeContactIndex].messages" :key="message.date"
-                    :class="{'sent': message.status === 'sent', 'received': message.status === 'received'}">
-                    {{ message.message }}
+    <div class="container py-4">
+        <div id="app">
+            <div class="contacts-list">
+                <div v-for="(contact, index) in contatti" :key="index" @click="selectContact(index)"
+                    :class="{ 'active': activeContactIndex === index }">
+                    <img :src="'./avatars'">
+                    <span>{{ contact.name }}</span>
                 </div>
             </div>
-            <div v-else class="empty-chat">Seleziona un contatto per visualizzare la chat</div>
-            <div class="message-input">
-                <input v-model="newMessage" @keyup.enter="sendMessage" placeholder="Scrivi un messaggio...">
+            <div class=" chat">
+                <div v-if="activeContactIndex !== null" class="messages">
+                    <div v-for="message in contatti[activeContactIndex].messages" :key="message.date"
+                        :class="{'sent': message.status === 'sent', 'received': message.status === 'received'}">
+                        {{ message.message }}
+                    </div>
+                </div>
+                <div v-else class="empty-chat">Seleziona un contatto per visualizzare la chat</div>
+                <div class="message-input">
+                    <input v-model="newMessage" @keyup.enter="sendMessage" placeholder="Scrivi un messaggio...">
+                </div>
             </div>
         </div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="main.js"></script>
 </body>
