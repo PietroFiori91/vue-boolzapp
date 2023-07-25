@@ -10,7 +10,28 @@
 <body>
     <div class="container py-4">
         <div id="app">
+
+
             <div class="contacts-list">
+                <div class="owner-avatar">
+                    <img src="img/avatar_io.jpg">
+                    <span>Io Me Medesimo</span>
+                </div>
+
+                <div class="p-3 container-notifiche">
+                    <div><span class="notifiche-top d-block">Ricevi notifiche di nuovi messaggi</span>
+                        <span class="notifiche-bottom link-secondary">Attiva notifiche desktop</span>
+                    </div>
+                </div>
+
+                <nav class="navbar bg-body-tertiary">
+                    <form class="container-fluid">
+                        <div class="input-group">
+                            <input type="text" class="input-lente form-control"
+                                placeholder="Cerca o inizia una nuova chat">
+                        </div>
+                    </form>
+                </nav>
                 <div v-for="(contact, index) in contatti" :key="index" @click="selectContact(index)"
                     :class="{ 'active': activeContactIndex === index }">
                     <img src="img/avatar_1.jpg">
@@ -18,6 +39,7 @@
                 </div>
             </div>
             <div class=" chat">
+
                 <div v-if="activeContactIndex !== null" class="messages">
                     <div v-for="message in contatti[activeContactIndex].messages" :key="message.date"
                         :class="{'sent': message.status === 'sent', 'received': message.status === 'received'}">

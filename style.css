@@ -8,9 +8,9 @@ body {
   background: linear-gradient(
     180deg,
     rgba(17, 181, 146, 1) 0%,
-    rgba(17, 181, 146, 1) 25%,
-    rgba(177, 177, 177, 1) 25%,
-    rgba(177, 177, 177, 1) 100%
+    rgba(17, 181, 146, 1) 15%,
+    rgb(215, 215, 215) 15%,
+    rgb(215, 215, 215) 100%
   );
 }
 
@@ -22,8 +22,7 @@ body {
 
 .contacts-list {
   background-color: #f0f0f0;
-  padding: 10px;
-  width: 250px;
+  width: 450px;
   overflow-y: auto;
 }
 
@@ -56,11 +55,30 @@ body {
   overflow-y: auto;
 }
 
+.input-lente {
+  font-size: 0.8rem;
+}
+
+.container-notifiche {
+  background-color: rgb(158, 232, 255);
+}
+
+.notifiche-top {
+  font-size: 1rem;
+}
+
+.notifiche-bottom {
+  font-size: 0.8rem;
+  color: #888;
+  text-decoration: underline;
+}
+
 .messages {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   overflow-y: auto;
+  margin-bottom: 3rem;
 }
 
 .messages > div {
