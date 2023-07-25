@@ -13,7 +13,7 @@
             <div class="contacts-list">
                 <div v-for="(contact, index) in contatti" :key="index" @click="selectContact(index)"
                     :class="{ 'active': activeContactIndex === index }">
-                    <img :src="'./avatars'">
+                    <img src="img/avatar_1.jpg">
                     <span>{{ contact.name }}</span>
                 </div>
             </div>
