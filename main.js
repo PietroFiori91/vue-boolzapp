@@ -342,6 +342,8 @@ const app = new Vue({
 
       this.newMessage = "";
 
+      //risposta utente dopo 1 sec
+
       setTimeout(() => {
         activeContact.messages.push({
           date: new Date().toLocaleString(),
