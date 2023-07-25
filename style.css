@@ -1,1 +1,93 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
 
+#app {
+  display: flex;
+  flex: 1;
+  height: 100vh;
+}
+
+.contacts-list {
+  background-color: #f0f0f0;
+  padding: 10px;
+  width: 250px;
+  overflow-y: auto;
+}
+
+.contacts-list > div {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.contacts-list img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.contacts-list span {
+  font-weight: bold;
+}
+
+.contacts-list > div.active {
+  background-color: #e0e0e0;
+}
+
+.chat {
+  flex: 1;
+  padding: 20px;
+  background-image: url(mine.jpg);
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow-y: auto;
+}
+
+.messages > div {
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.messages > div.sent {
+  background-color: #dcf8c6;
+  align-self: flex-end;
+}
+
+.messages > div.received {
+  background-color: #fff;
+  align-self: flex-start;
+}
+
+.empty-chat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 18px;
+  color: #888;
+}
+
+.message-input {
+  width: 85%;
+  position: absolute;
+  bottom: 25px;
+}
+
+.message-input input {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}

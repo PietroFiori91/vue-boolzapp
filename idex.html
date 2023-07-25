@@ -8,28 +8,24 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-4">
-                <div class="contact-list">
-                    <!-- contatti -->
-                    <div class="card contact"></div>
-                    <div class="card contact"></div>
-                    <div class="card contact"></div>
-                    <div class="card contact"></div>
-                    <div class="card contact"></div>
+    <div id="app">
+        <div class="contacts-list">
+            <div v-for="(contact, index) in contatti" :key="index" @click="selectContact(index)"
+                :class="{ 'active': activeContactIndex === index }">
+                <img :src="'./avatars'">
+                <span>{{ contact.name }}</span>
+            </div>
+        </div>
+        <div class=" chat">
+            <div v-if="activeContactIndex !== null" class="messages">
+                <div v-for="message in contatti[activeContactIndex].messages" :key="message.date"
+                    :class="{'sent': message.status === 'sent', 'received': message.status === 'received'}">
+                    {{ message.message }}
                 </div>
             </div>
-            <div class="col-8">
-                <div class="chat">
-                    <!-- chat -->
-                    <p class="sent-text">aaaaaaaaaaaaaaa</p>
-                    <p class="recived-text">aaaaaaaaaaaaaaa</p>
-                    <p>aaaaaaaaaaaaaaa</p>
-                    <p>aaaaaaaaaaaaaaa</p>
-                    <p>aaaaaaaaaaaaaaa</p>
-                    <p>aaaaaaaaaaaaaaa</p>
-                </div>
+            <div v-else class="empty-chat">Seleziona un contatto per visualizzare la chat</div>
+            <div class="message-input">
+                <input v-model="newMessage" @keyup.enter="sendMessage" placeholder="Scrivi un messaggio...">
             </div>
         </div>
     </div>
