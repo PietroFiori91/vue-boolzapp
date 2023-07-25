@@ -139,31 +139,3 @@ body {
   padding: 10px;
   background-color: #f5f5f5;
 }
-
-/* Barra orizzontale sopra la chat */
-.chat-header-top {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #f5f5f5;
-  z-index: 1;
-}
-
-.avatar-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-}
-
-.user-icon {
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
-}
-
-.random-icon {
-  width: 24px;
-  height: 24px;
-  margin-left: 10px;
-}

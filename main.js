@@ -322,7 +322,8 @@ const app = new Vue({
   data: {
     contatti: contatti,
     activeContactIndex: null,
-    newMessage: "",
+    newMessage: "", //nuovo messaggio su clic contatto
+    searchQuery: "", //ricerca nei contatti
   },
   methods: {
     selectContact(index) {
@@ -351,6 +352,19 @@ const app = new Vue({
           status: "received",
         });
       }, 1000);
+    },
+    filterContacts() {
+      // Funzione ricerca contatto
+      if (this.searchQuery.trim() === "") {
+        // ricerca vuota = mostra tutto
+        this.contatti = contatti;
+        return;
+      }
+
+      const query = this.searchQuery.toLowerCase();
+      this.contatti = contatti.filter((contact) =>
+        contact.name.toLowerCase().includes(query)
+      );
     },
   },
 });

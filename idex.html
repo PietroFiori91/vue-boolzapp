@@ -15,28 +15,30 @@
 
 
             <div class="contacts-list">
-
+                <!-- owner top -->
                 <div class="contact-list-container d-flex flex-column align-items-start position-fixed">
                     <div class="owner-avatar">
                         <img src="img/avatar_io.jpg">
                         <span>Io Me Medesimo</span>
                     </div>
-
+                    <!-- notifiche -->
                     <div class="p-3 container-notifiche">
                         <div><span class="notifiche-top d-block">Ricevi notifiche di nuovi messaggi</span>
                             <span class="notifiche-bottom link-secondary">Attiva notifiche desktop</span>
                         </div>
                     </div>
-
+                    <!-- navbar ricerca -->
                     <nav class="navbar bg-body-tertiary">
                         <form class="container-fluid">
                             <div class="input-group">
                                 <input type="text" class="input-lente form-control"
-                                    placeholder="Cerca o inizia una nuova chat">
+                                    placeholder="Cerca o inizia una nuova chat" v-model="searchQuery"
+                                    @input="filterContacts"> <!-- aggiungo ricerca input -->
                             </div>
                         </form>
                     </nav>
                 </div>
+                <!-- contatti -->
                 <div class="contact-container" v-for="(contact, index) in contatti" :key="index"
                     @click="selectContact(index)" :class="{ 'active': activeContactIndex === index }">
                     <img src="img/avatar_1.jpg">
