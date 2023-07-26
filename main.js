@@ -343,6 +343,13 @@ const app = new Vue({
 
       this.newMessage = "";
 
+      //scroll down
+
+      Vue.nextTick(() => {
+        const messagesContainer = this.$refs.messagesContainer;
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      });
+
       //risposta utente dopo 1 sec
 
       setTimeout(() => {
@@ -355,8 +362,10 @@ const app = new Vue({
     },
     filterContacts() {
       // Funzione ricerca contatto
+
       if (this.searchQuery.trim() === "") {
         // ricerca vuota = mostra tutto
+
         this.contatti = contatti;
         return;
       }

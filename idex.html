@@ -52,7 +52,7 @@
             <div class=" chat">
 
 
-                <div v-if="activeContactIndex !== null" class="messages">
+                <div v-if="activeContactIndex !== null" class="messages" ref="messagesContainer">
 
                     <div v-for="message in contatti[activeContactIndex].messages" :key="message.date"
                         :class="{'sent': message.status === 'sent', 'received': message.status === 'received'}">
